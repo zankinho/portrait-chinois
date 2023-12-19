@@ -1,0 +1,51 @@
+[
+    {
+        "analogies": "une saison",
+        "valeurAnalogies": "l'Automne",
+        "text": "Si j'étais l'automne, je signifierais le changement et la mélancolie, avec les couleurs chaudes et les feuilles qui tombent, symbolisant la beauté des transitions.",
+        "url": "img/saison.jpeg",
+        "id": "saison"
+    },
+    {
+        "analogies": "un animal",
+        "valeurAnalogies": "le Jaguar",
+        "text": "Cet animal incarne ma force intérieure et ma détermination. Le jaguar représente la puissance, la grâce et une attitude féroce envers les défis, reflétant ainsi ma propre approche de la vie avec détermination et confiance.",
+        "url": "img/animal.jpg",
+        "id": "animal"
+    },
+    {
+        "analogies": "une marque de voiture",
+        "valeurAnalogies": "BMW",
+        "text": "Empreintes de couleurs vives, de musique entraînante et d'une énergie audacieuse, reflétant ma joie de vivre et ma créativité.",
+        "url": "img/marquedevoiture.jpg",
+        "id": "marquedevoiture"
+    },
+    {
+        "analogies": "un super-héro",
+        "valeurAnalogies": "Le Mandalorien",
+        "text": "Incarnant la détermination, le mystère et la loyauté dans une quête résiliente aux valeurs profondes.",
+        "url": "img/superhero.jpg",
+        "id": "superhero"
+    },
+    {
+        "analogies": "une couleur",
+        "valeurAnalogies": "le Rouge",
+        "text": "Je choisis le rouge car il représente l'énergie. Cette couleur incarne mon dynamisme, ma détermination et mon amour pour la vie.",
+        "url": "img/couleur.jpg",
+        "id": "couleur"
+    },
+    {
+        "analogies": "un film",
+        "valeurAnalogies": "Retour vers le Futur",
+        "text": "Comme ce film culte, je symboliserais l'aventure, la nostalgie et la fascination pour l'avenir.",
+        "url": "img/film.jpg",
+        "id": "film"
+    },
+    {
+        "analogies": "un paysage",
+        "valeurAnalogies": "une montagne",
+        "text": "La montagne symbolise pour moi la persévérance car lorsque l’on dit que l’on veut atteindre des sommets on met tout en œuvre pour y arriver et ainsi atteindre ses objectifs sans jamais abandonner.",
+        "url": "img/paysage.jpg",
+        "id": "paysage"
+    }
+]

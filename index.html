@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="logo.png" />
+	<link rel="stylesheet" href="styles.css">
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap" rel="stylesheet">
+	<title>Portrait Chinois d'Alexandre GHMIR</title>
+</head>
+
+<body>
+	<div class="bg">
+	<section>
+		<header>
+			<h1>Portrait Chinois</h1>
+			<h2>par Alexandre GHMIR</h2>
+			<a href="#saison">
+				<h3>Jouer !</h3>
+			</a>
+		</header>
+	</section>
+
+	<div id="analogies"></div>
+
+	<div id="btnRemonterHaut" class="remontee-haut">
+		<img src="img/triangle2.png" alt="Remonter en haut">
+	</div>
+
+	<!-- Fenêtre modale pour les mentions légales -->
+	<div id="modalMentionLegale" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<h5>Mentions légales</h5>
+			<p>
+				Ce site a été réalisé par Alexandre Ghmir dans le cadre d'un projet encadré par les enseignants suivants
+				: Philippe Gambette, Gaëlle Charpentier, Matthieu Berthet
+			</p>
+				Directeur de la publication, Conception graphique et Développement : Alexandre GHMIR, étudiant de
+                l'Université Gustave Eiffel
+                </br>
+                </br>Hébergeur : Université Gustave Eiffel
+                </br>
+                </br>Université Gustave Eiffel : 5 boulevard Descartes - Champs-sur-Marne - 77454 Marne-la-Vallée Cedex2
+                - Tél : 33(1).60.95.75.00 - Fax : 33(1).60.95.75.75
+                </br>
+                </br>Législation relative aux données à caractère personnel
+                </br>
+                </br>Le formulaire permettant la création d’une analogie personnalisée recueil votre adresse de courriel
+                et votre adresse IP. Pour toute question portant sur la collecte ou le traitement de vos données à
+                caractère personnel par l’UPEM, vous pouvez saisir la personne responsable du traitement des données qui
+                est : Philippe Gambette (philippe.gambette@univ-eiffel.fr) Les fichiers détenus par l'UPEM qui
+                comportent des données à caractère personnel ne seront jamais transmis à des tiers et ne feront jamais
+                l'objet d'une commercialisation.
+			</p>
+		</div>
+	</div>
+
+	<section id="formulaire">
+		<form method="get">
+			<fieldset>
+			<legend>À TON TOUR DE JOUER 🎮<p id="message"></p>
+			</legend>
+			<label for="analogie">Si j'étais <span>*</span></label>
+			<input type="text" placeholder="analogie" name="analogie" id="analogie" maxlength="50" required />
+
+			<label for="valeur">Je serais<span>*</span></label>
+			<input type="text" placeholder="réponse" name="valeur" id="valeur" maxlength="50" required />
+			
+			<label for="desc">Description (max 500)<span>*</span></label>
+			<textarea placeholder="Tapez votre description ici" name="desc" maxlength="500" id="desc" required></textarea>
+			
+			<label for="URL">URL de l'Illustration<span>*</span></label>
+			<input type="url" placeholder="URL de l'image" name="URL" id="URL" required/>
+			
+			<label for="email">E-mail<span>*</span></label>
+			<input type="email" placeholder="email" name="email" id="email" required/>
+			
+			<br>
+			<input id="valider" type="submit" name="submit" value="valider" />
+			<h5 id="success"></h5>
+		</fieldset>
+		</form>
+	</section>
+	<!-- <section> -->
+	<div id="customAnalogie"></div>
+	<!-- </section> -->
+</body>
+<footer>
+	<button id="btnMentionLegale" class="fixed-button">Mentions Légales</button>
+</footer>
+</div>
+</html>

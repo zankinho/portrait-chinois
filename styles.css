@@ -1,0 +1,456 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.body-no-scroll {  
+    overflow: hidden;
+}
+
+:root {
+    scrollbar-width: none !important
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Styles généraux */
+html {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    -webkit-scroll-snap-type: y mandatory;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: 'DM Sans', sans-serif;
+    scrollbar-width: none !important;
+    background-size: 300% 300%;
+    background-image: linear-gradient(-45deg, black 0%, black 25%, rgb(32, 32, 32) 51%, #3e3e3e 100%);
+    background-attachment: fixed;
+    -webkit-animation: AnimateBG 20s ease infinite;
+    animation: AnimateBG 20s ease infinite;
+}
+
+/* Styles pour l'en-tête */
+header {
+    color: var(--white);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: 1.5em;
+    text-align: center;
+    text-shadow: black 1px 0px 3px;
+}
+
+/* Styles pour la description de l'image */
+.img-desc {
+    width: 40%;
+    height: 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: 5px 0px 5px;
+    animation: float 2s infinite;
+}
+
+/* Styles pour les articles */
+article {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Textes */
+header h1,
+h2 {
+    font-size: 2em;
+
+}
+
+h1 {
+    font-family: 'Agbalumo', sans-serif;
+    animation-duration: 3s;
+    animation-name: slidein;
+    margin-bottom: 10px;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Agbalumo', sans-serif;
+    animation-duration: 3s;
+    animation-name: slideon;
+    margin-top: 10px;
+    margin: 0;
+
+}
+
+h3 {
+    font-family: 'Agbalumo', sans-serif;
+    font-size: 2em;
+    color: yellow;
+    text-shadow: yellow 1px 0px 3px;
+    margin: 0;
+
+}
+
+h4 {
+    font-family: 'Agbalumo', sans-serif;
+    margin: 0;
+    font-size: 1.5em;
+    padding: 4px;
+    text-decoration: none;
+    overflow-wrap: break-word;
+}
+
+h5 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.5em;
+    animation-name: float;
+    text-align: center;
+    margin: 0;
+
+}
+
+h6, label {
+    font-family: 'Agbalumo', sans-serif;
+    margin: 0;
+}
+
+
+p {
+    font-family: 'DM Sans', sans-serif;
+}
+/* Styles pour les blocs */
+.bloc {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10.1px);
+}
+
+/* Styles pour les sections */
+section {
+    color: white;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    gap: 2rem;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    -moz-scroll-snap-align: start;
+    -moz-scroll-snap-stop: always;
+    text-shadow: black 0px 0px 1px;
+}
+
+@media screen and (max-width: 1024px) {
+    section {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .img-desc {
+        width: 80%;
+        height: 50%;
+    }
+
+    article {
+        width: 80%;
+    }
+}
+
+/* Triangles */
+.triangle_container {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.triangle {
+    width: 30px;
+    height: 30px;
+    display: flex;
+}
+
+/* Liens */
+a {
+    color: white;
+    transition-duration: 1s;
+    transition-property: text-decoration-color;
+    transition: .2s ease-in-out;
+    text-decoration: none;
+    text-shadow: white 0px 0px 3px;
+}
+
+a:hover {
+    animation: wiggle 2s linear;
+    font-size: 1.5em;
+    transition: .2s ease-in-out;
+}
+
+/* Fenetre ML */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #888;
+    background-color: rgba(25, 25, 25, 0.707);
+    border: none;
+    border-radius: 10px;
+    height: fit-content;
+    width: 80%;
+    min-width: 500px;
+    overflow: auto;
+}
+
+/* Bouton fermé dans fenetre */
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.close:hover {
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.7);
+}
+
+/* Bouton Fixe */
+.fixed-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px;
+    font-family: 'Agbalumo', sans-serif;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: black 0px 0px 3px; 
+    box-shadow: white 0px 0px 3px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fixed-button:hover {
+    transform: scale(1.1);
+}
+
+
+/* Formulaire */
+
+
+form {
+    width: 40%;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    text-shadow: black 1px 0px 3px;
+}
+
+form fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+input,
+textarea {
+    font-size: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 20px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 1rem;
+}
+
+label span{
+    color: red;
+}
+
+textarea {
+    resize: none;
+}
+
+#valider {
+    padding: 0.8rem;
+    color: black;
+    font-family: 'Agbalumo', sans-serif;
+    font-size: x-large;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+    text-shadow: black 1px 0px 3px;
+}
+
+#valider:hover {
+    background-color: yellow;
+}
+
+.remontee-haut {
+    opacity: 0;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.showBtn {
+    opacity: 1;
+}
+
+
+.remontee-haut img {
+    width: 50px;
+    height: 50px;
+}
+
+.remontee-haut:hover {
+    animation: wiggle 2s linear;
+}
+
+/* Animation de glissement */
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+
+@keyframes slideon {
+    from {
+        margin-right: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-right: 0%;
+        width: 100%;
+    }
+}
+
+/* Animation de flottement */
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+    }
+
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+}
+
+/* Animation de secousse */
+@keyframes wiggle {
+
+    0%,
+    7% {
+        transform: rotateZ(0);
+    }
+
+    15% {
+        transform: rotateZ(-15deg);
+    }
+
+    20% {
+        transform: rotateZ(10deg);
+    }
+
+    25% {
+        transform: rotateZ(-10deg);
+    }
+
+    30% {
+        transform: rotateZ(6deg);
+    }
+
+    35% {
+        transform: rotateZ(-4deg);
+    }
+
+    40%,
+    100% {
+        transform: rotateZ(0);
+    }
+}
+
+/* Animation background */
+@-webkit-keyframes AnimateBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes AnimateBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
